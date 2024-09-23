@@ -1,0 +1,451 @@
+/*Regras CSS para o site inteiro*/
+
+/* Regra para TUDO Alterando o comportamento do Box Model visando evitar problemas de tamanho/espaçamento PARA TODOS OS ELEMENTOS da página (por isso, usamos o *). */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url(../imagens/oriental-tiles.png);
+    background-attachment: fixed;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/*Regra com seletor CLASSE 
+Ao usar classes, podemos escolher livremente
+onde aplicá-las, ou seja, em quais tags a classe será aplicada.*/
+.container {
+    background-color: rgba(255, 255, 255, 0.836);
+
+    /*Bloco CENTRALIZADO*/
+    width: 70%;
+    margin: auto;
+
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: red 10px 10px 40px 10px;
+}
+
+/* EXERCÍOOOO*/
+.listas {
+    background: linear-gradient(black, gold, orange);
+    padding: 1%;
+    width: 60%;
+    margin: auto;
+    border-top: solid 4px orange;
+    border-bottom: solid 4px orange;
+    box-shadow: rgba(255, 166, 0, 0.747) 0 0 30px;
+
+    /*Adicione propriedades para:
+    -Efeito de cor de fundo (use 3 cores á sua escolha)
+    -Espaçamento interno de 4%
+    -Largura de 90%
+    -Bloco centralizado
+    -Bordas somente superior e inferior (cor, tamanho, tipo á sua escolha)-Sombra com configuração á sua escolha (a cor deve ter um pouco de transparência)*/
+
+    /*2) Aplique a classe nas duas divs da página index.*/
+}
+
+/* seletor tipo TAG*/
+p {
+    font-size: 18px;
+
+    /*Usando valor fixo/absoluto*/
+    line-height: 32px;
+
+    /* Usando valor relativo/proporcinal*/
+    line-height: 1.5;
+    /* Sem px/medida*/
+
+    /* Ao usar uma propriedade duas vezes na mesma regra, sempre irá prevalecer o valor da última (efeito cascata). No entanto, evite esta situação de repetir propriedades na mesma regra. */
+}
+
+/* Seletor Classe */
+.centralizar {
+    text-align: center;
+}
+
+.destaque {
+    background-color: rgb(255, 183, 1);
+    padding: 3px;
+    border: solid 1px black;
+    border-radius: 4px;
+}
+
+figure {
+    background-color: aqua;
+    text-align: center;
+    max-width: 419px;
+    margin: 0 auto;
+    position: relative;
+
+    /* versão abreviada */
+    /* margin: 0 auto;*/
+
+    /* versão detalhada*/
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+    /* scale(valores de zero até 1)*/
+    transform: scale(0.95) rotate(deg) translatey(20px);
+    filter: grayscale();
+
+    transition: 200ms;
+}
+
+figcaption {
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.486);
+    color: white;
+
+    /* Tornando o elemento absoluto.
+    agora ele esta "solto", podendo ser colocado em qualquer coordenada.*/
+
+    /* Tornando o figure a referência para o posicionamento do figcaption.*/
+    position: absolute;
+
+    /* Propriedades de coordenada: top, bottom, left e right*/
+
+    /* para "força" o tamanho total*/
+
+    /* Opção 1: use left/right*/
+    right: 0;
+    left: 0;
+
+    /*Opção 2: largura de 100% */
+    width: 100%;
+
+    bottom: 20px;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+/* Seletor DESCENDENTE */
+figure img {
+    border: solid 1px;
+}
+
+/* Seletor PSEUDO-CLASSE-começa com:
+: hover -> passar o mause */
+figure:hover {
+    filter: none;
+    transform: scale(1);
+
+}
+
+/* Seletor DESCENDENTE */
+ol li {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+ul li {
+    list-style-type: circle;
+    color: white;
+}
+
+ul li a {
+    /* link da lista não-ordenada */
+    color: white;
+    text-decoration: none;
+    text-shadow: black 1px 1px 4px;
+}
+
+/* Pseudo-elemento ::marker 
+(usando apenas para fins visuais/estéticos) */
+ul li::marker {
+    content: "✔ ";
+    font-size: 16px;
+}
+
+/* Pseudo-Classe */
+ul li:first-child {
+    /* Primeiro "filho" */
+    background-color: goldenrod;
+}
+
+ul li:last-child {
+    /* Último "filho" */
+    background-color: black;
+}
+
+ul li:nth-child(4) {
+    /* Enésimo "filho" */
+    background-color: red;
+}
+
+
+details {
+    background-color: white;
+    padding: 10px;
+    border: solid 10px red;
+    text-align: center;
+}
+
+summary {
+    font-weight: bold;
+}
+
+summary::marker {
+    content: "🤔 ";
+    font-size: 20px;
+}
+
+details[open] summary::marker {
+    content: "💡";
+}
+
+/* Regras para o menu de links */
+nav {
+    text-align: center;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: bold;
+    background-color: darkred;
+    color: white;
+
+    /* Usamos o inline-block para permitir definição de tamanho e ao mesmo manter os elementos lado a lado. */
+    display: inline-block;
+    width: 33.33%;
+    padding: 10px;
+    transition: 200ms;
+}
+
+nav a:hover {
+    background-color: black;
+    transform: translateY(-10px);
+}
+
+/* Grupo de seletores */
+
+nav a:hover,
+nav a:focus {
+    background-color: black;
+    transform: translateY(-10px);
+}
+
+
+.flutuar-imagem {
+    float: left;
+    margin-right: 12px;
+}
+
+h1::first-line {
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-decoration: underline;
+    color: blue;
+}
+
+h1 {
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+
+}
+
+h2 {
+    font-size: 1.1rem;
+    font-weight: bolder;
+    color: red;
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: bolder;
+    color: orange;
+}
+
+h4 {
+    font-size: 1.1rem;
+    font-weight: bolder;
+    color: chocolate;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #3498db;
+}
+
+hr {
+    border: 0;
+    height: 5px;
+    background-color: #3498db;
+    border-radius: 5px;
+}
+
+.centralizar {
+    text-align: center;
+}
+
+p a {
+    text-decoration: none;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    display: inline-block;
+    width: 300px;
+}
+
+p a:hover {
+    background-color: red;
+    transform: translateY(-10px);
+}
+
+.imagem-efeito {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+}
+
+/* Regra de animação */
+@keyframes Cores {
+
+    /* Dê */
+    from {
+        transform: translateY(-500px);
+        opacity: 0;
+    }
+
+    /* para */
+    to {
+        text-shadow: darkred 0 0 10px;
+    }
+}
+
+/* Classe para aplicar a animação */
+.animacao-cores {
+    will-change: transform;
+
+    /* nome da animação (obrigatório) */
+    animation-name: Cores;
+
+
+    /* Atraso (espera um pouco antes de começar) */
+    animation-delay: 5s;
+
+    /* duração/tempo da animação (obrigatório)*/
+    animation-duration: 1s;
+    /* segundos ou milissegundos */
+
+    /* Qualidade de repetição */
+    animation-iteration-count: infinite;
+
+    /* Direção da animação */
+    animation-direction: alternate;
+
+    /* Funções de aceleração/desaceleração */
+    animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+
+
+    /* Forma abreviada */
+    /* animation: cores 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 5s infinite alternate ; */
+
+}
+
+
+@keyframes animaSubtitulos {
+    0% {
+        color: blue;
+    }
+
+    50% {
+        color: orange;
+        transform: translateX(250px);
+        opacity: 0.5;
+    }
+
+    75% {
+        transform: translateX(10px) scale(2);
+    }
+
+    100% {
+        transform: scale(1);
+        color: pink;
+        text-shadow: black 0 0 10px;
+    }
+}
+
+.subtitulo-animado {
+    display: inline-block;
+    animation-name: animaSubtitulos;
+    animation-duration: 5s;
+}
+
+h3 {
+    background-color: white;
+}
+
+.centralizar {
+    text-align: center;
+}
+
+.bloco-animado {
+    overflow: hidden;
+    background-color: white;
+    border: 2px solid black;
+    width: 350px;
+    height: 180px;
+    margin: auto;
+    position: relative;
+}
+
+.bloco-animado p {
+    text-align: center;
+    font-size: 36px;
+    background-color: rgba(0, 0, 255, 0.473);
+    color: white;
+    margin: 0;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+
+    animation-name: animaTexto;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    will-change: transform;
+    z-index: 2;
+}
+
+.bloco-animado img {
+    position: absolute;
+    z-index: 1;
+    animation-name: animaImagem;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+
+
+@keyframes animaImagem {
+    from {
+        transform: translateX(-100px) rotate(0);
+    }
+
+    to {
+        transform: translateX(400px) rotate(360deg);
+    }
+}
+
+@keyframes animaTexto {
+    from {
+        transform: scale(1);
+        background-color: rgba(0, 0, 0, 0.596);
+    }
+
+    to {
+        background-color: rgba(53, 62, 247, 0.39);
+        transform: scale(1.3);
+    }
+}
