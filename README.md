@@ -1,2 +1,5 @@
-# projeto-integrador
-repositorio do projeto integrador
+# Estilização de páginas HTML
+
+## Contexto
+
+Análise das tag HTML existentes nas páginas e aplicação de diversos estilos CSS com regras, seletores, propriedades e valores.
